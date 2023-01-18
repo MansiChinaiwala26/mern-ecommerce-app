@@ -9,6 +9,7 @@ const { resetPassword } = require('../utils/emailTemplates');
 const { sendEmail } = require('../utils/sendEmail');
 
 
+
 router.post("/register", (req, res) => {
     Customer.find({email: req.body.email}).exec().then((customer) => {
         if(customer.length >=1){
